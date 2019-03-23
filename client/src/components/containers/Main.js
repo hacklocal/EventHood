@@ -5,7 +5,7 @@ import NavbarMenu from "../interface/NavbarMenu";
 export default class Main extends Component {
   render() {
     return (
-      <div className="container">
+      <div>
         <NavbarMenu />
         <Home />
       </div>
