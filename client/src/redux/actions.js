@@ -8,3 +8,8 @@ export const modEvent = (eventId, mods) => ({
   eventId,
   mods
 });
+
+export const loadEvents = events => ({
+  type: "LOAD_EVENTS",
+  events
+});
