@@ -27,3 +27,13 @@ export const setSelectedRegion = region => ({
   type: "SET_REGION",
   region
 });
+
+export const loadUsers = userList => ({
+  type: "LOAD_USERS",
+  userList
+});
+
+export const setUser = user => ({
+  type: "SET_USER",
+  user
+});

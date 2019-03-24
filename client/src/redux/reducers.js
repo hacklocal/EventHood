@@ -18,6 +18,15 @@ const user = (state = {}, action) => {
   }
 };
 
+const users = (state = [], action) => {
+  switch (action.type) {
+    case "LOAD_USERS":
+      return [...action.query];
+    default:
+      return state;
+  }
+};
+
 const regions = (state = [], action) => {
   switch (action.type) {
     case "SET_REGIONS":
