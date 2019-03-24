@@ -8,6 +8,7 @@ import Events from "../screens/Events";
 import axios from "axios";
 import jsonpAdapter from "axios-jsonp";
 import SingleEvent from "../interface/list/SingleEvent";
+import Login from "../screens/Login";
 
 class Main extends Component {
   fetchAreas = () => {
@@ -45,6 +46,7 @@ class Main extends Component {
           path="/evento/:id"
           render={props => <SingleEvent {...props} />}
         />
+        <Route path="/login" component={Login} />
       </Router>
     );
   }

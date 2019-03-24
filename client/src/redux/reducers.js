@@ -51,7 +51,8 @@ const reducers = combineReducers({
   events,
   user,
   regions,
-  actualRegion
+  actualRegion,
+  users
 });
 
 export default reducers;
