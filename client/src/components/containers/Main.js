@@ -9,9 +9,6 @@ import axios from "axios";
 import jsonpAdapter from "axios-jsonp";
 
 class Main extends Component {
-  state = {
-    currentRegion: ""
-  };
   fetchAreas = () => {
     const { loadRegionsList } = this.props;
     axios({
@@ -22,8 +19,19 @@ class Main extends Component {
       .then(res => res.data.features.map(el => el.properties.AMBITO))
       .then(res => loadRegionsList(res));
   };
+  fetchEvents = () => {
+    const { loadEventsList } = this.props;
+    axios({
+      url: "https://eventhood.worldtecno.com/?db=eventi",
+      adapter: jsonpAdapter,
+      callbackParamName: "axiosJsonpCallback"
+    })
+      .then(res => res.data.events)
+      .then(res => loadEventsList(res));
+  };
   componentDidMount() {
     this.fetchAreas();
+    this.fetchEvents();
   }
   render() {
     return (
