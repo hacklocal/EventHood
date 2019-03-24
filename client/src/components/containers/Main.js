@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import Home from "../screens/Home";
 import NavbarMenu from "../interface/NavbarMenu";
-import { addEvent, loadEvents, loadRegions } from "../../redux/actions";
+import {
+  addEvent,
+  loadEvents,
+  loadRegions,
+  loadUsers
+} from "../../redux/actions";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Events from "../screens/Events";
@@ -14,17 +19,27 @@ class Main extends Component {
   fetchAreas = () => {
     const { loadRegionsList } = this.props;
     axios({
-      url: "https://eventhood.worldtecno.com/?db=territori",
+      url: "https://eventhood.worldtecno.com/api.php?db=territori",
       adapter: jsonpAdapter,
       callbackParamName: "axiosJsonpCallback"
     })
       .then(res => res.data.features.map(el => el.properties.AMBITO))
       .then(res => loadRegionsList(res));
   };
+
+  fetchUsers = () => {
+    const { loadUserList } = this.props;
+    axios({
+      url: "https://eventhood.worldtecno.com/api.php?db=utenti",
+      adapter: jsonpAdapter,
+      callbackParamName: "axiosJsonpCallback"
+    }).then(res => loadUserList(res.data.users));
+  };
+
   fetchEvents = () => {
     const { loadEventsList } = this.props;
     axios({
-      url: "https://eventhood.worldtecno.com/?db=eventi",
+      url: "https://eventhood.worldtecno.com/api.php?db=eventi",
       adapter: jsonpAdapter,
       callbackParamName: "axiosJsonpCallback"
     })
@@ -34,6 +49,7 @@ class Main extends Component {
   componentDidMount() {
     this.fetchAreas();
     this.fetchEvents();
+    this.fetchUsers();
   }
 
   render() {
@@ -61,7 +77,8 @@ const mapStateToProps = state => ({
 const dispatchStateToProps = dispatch => ({
   addEventToList: event => dispatch(addEvent(event)),
   loadEventsList: events => dispatch(loadEvents(events)),
-  loadRegionsList: query => dispatch(loadRegions(query))
+  loadRegionsList: query => dispatch(loadRegions(query)),
+  loadUserList: list => dispatch(loadUsers(list))
 });
 
 export default connect(

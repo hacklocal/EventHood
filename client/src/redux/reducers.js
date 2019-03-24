@@ -21,7 +21,7 @@ const user = (state = {}, action) => {
 const users = (state = [], action) => {
   switch (action.type) {
     case "LOAD_USERS":
-      return [...action.query];
+      return [...action.userList];
     default:
       return state;
   }

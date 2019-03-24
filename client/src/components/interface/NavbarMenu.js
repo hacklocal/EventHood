@@ -19,6 +19,27 @@ export default class NavbarMenu extends Component {
               </Link>
             </Nav>
           </Nav>
+          <Nav className="mr-auto">
+            <Nav>
+              <Link className="text-white pages" to="/">
+                Eventi
+              </Link>
+            </Nav>
+          </Nav>
+          <Nav className="mr-auto">
+            <Nav>
+              <Link className="text-white pages" to="/">
+                Servizi
+              </Link>
+            </Nav>
+          </Nav>
+          <Nav className="mr-auto">
+            <Nav>
+              <Link className="text-white pages" to="/">
+                Persone
+              </Link>
+            </Nav>
+          </Nav>
 
           <Nav className="ml-auto">
             <Button id="btnLogin" variant="light">
