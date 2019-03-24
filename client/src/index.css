@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   background-color: #EEEEEE;
   color: #333333;
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -18,4 +19,9 @@ html, body {
 #formSearch {
   margin: 20px auto;
   text-align: center;
+}
+
+#btnSearch {
+  background-color: #23545B !important;
+  color: #FFFFFF !important;
 }
