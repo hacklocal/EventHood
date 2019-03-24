@@ -21,7 +21,7 @@ class Login extends Component {
   verifyUser = e => {
     e.preventDefault();
     fetch(
-      `http://eventhood.worldtecno.com/api.php?db=logIn&email=${
+      `https://eventhood.worldtecno.com/api.php?db=logIn&email=${
         this.state.email
       }&password=${this.state.password}`
     ).then(res => console.log(res));
