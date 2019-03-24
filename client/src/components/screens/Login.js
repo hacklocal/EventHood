@@ -37,21 +37,34 @@ class Login extends Component {
 
   render() {
     return (
-      <form className="loginForm" onSubmit={this.verifyUser}>
-        <label>Email</label>
-        <input
-          type="email"
-          name="email"
-          onChange={() => this.handleEmailChange}
-        />
+      <form id="loginForm" onSubmit={this.verifyUser}>
+        <div className="row">
+          <div className="col-sm-12 col-md-4 col-lg-4 m-auto">
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="form-control"
+                onChange={() => this.handleEmailChange}
+              />
+            </div>
 
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          onChange={this.handlepPwdChange}
-        />
-        <button type="submit">LOG ME IN</button>
+            <div className="form-group">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="form-control"
+                onChange={this.handlepPwdChange}
+              />
+            </div>
+
+            <button className="form-control" id="login" type="submit">
+              Login
+            </button>
+          </div>
+        </div>
       </form>
     );
   }

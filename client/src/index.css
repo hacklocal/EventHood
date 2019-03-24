@@ -90,3 +90,12 @@ body {
   background-color: #23545B !important;
   color: #FFFFFF !important;
 }
+
+#login {
+  background-color: #23545B !important;
+  color: #FFFFFF !important;
+}
+
+#loginForm {
+  margin: 200px auto;
+}
