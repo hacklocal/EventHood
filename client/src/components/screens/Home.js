@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import logo from "../../assets/images/logo22.png";
-import { Form, Col, Row } from "react-bootstrap";
+import logo from "../../assets/images/logo.png";
+import { Form, Col, Row, Button } from "react-bootstrap";
 import { connect } from "react-redux";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 class Home extends Component {
   render() {
@@ -26,13 +26,9 @@ class Home extends Component {
                     ))}
                   </Form.Control>
                 </Form.Group>
-                {/*<Form.Group controlId="inputSearch">
-                  <Form.Control type="text" placeholder="Cerca Evento..." />
-                </Form.Group>
                 <Button id="btnSearch" variant="light" type="submit">
                   <FontAwesomeIcon icon={faSearch} size="lg" />
                 </Button>
-                */}
               </Col>
             </Row>
           </Form>

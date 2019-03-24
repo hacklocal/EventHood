@@ -1,6 +1,10 @@
 html,
 body {
-  background-color: #EEEEEE;
+  background-image: url('./assets/images/bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: #333333;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
@@ -24,4 +28,13 @@ body {
 #btnSearch {
   background-color: #23545B !important;
   color: #FFFFFF !important;
+}
+
+#btnLogin {
+  background-color: #23545B !important;
+}
+
+#btnLogin a {
+  color: #FFFFFF !important;
+  text-decoration: none;
 }
