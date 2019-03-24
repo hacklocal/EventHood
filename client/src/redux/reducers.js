@@ -18,9 +18,19 @@ const user = (state = {}, action) => {
   }
 };
 
+const regions = (state = [], action) => {
+  switch (action.type) {
+    case "SET_REGIONS":
+      return [...action.query];
+    default:
+      return state;
+  }
+};
+
 const reducers = combineReducers({
   events,
-  user
+  user,
+  regions
 });
 
 export default reducers;
