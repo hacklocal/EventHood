@@ -18,3 +18,12 @@ export const loadRegions = query => ({
   type: "SET_REGIONS",
   query
 });
+
+export const resetSelectedRegion = () => ({
+  type: "RESET_REGION"
+});
+
+export const setSelectedRegion = region => ({
+  type: "SET_REGION",
+  region
+});

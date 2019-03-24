@@ -27,10 +27,22 @@ const regions = (state = [], action) => {
   }
 };
 
+const actualRegion = (state = "", action) => {
+  switch (action.type) {
+    case "RESET_REGION":
+      return "";
+    case "SET_REGION":
+      return action.region;
+    default:
+      return state;
+  }
+};
+
 const reducers = combineReducers({
   events,
   user,
-  regions
+  regions,
+  actualRegion
 });
 
 export default reducers;

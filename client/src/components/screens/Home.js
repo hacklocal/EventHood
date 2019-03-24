@@ -22,7 +22,7 @@ class Home extends Component {
                   <Form.Label>Seleziona un quartiere</Form.Label>
                   <Form.Control as="select">
                     {regions.map(el => (
-                      <option>{el}</option>
+                      <option key={el}>{el}</option>
                     ))}
                   </Form.Control>
                 </Form.Group>
