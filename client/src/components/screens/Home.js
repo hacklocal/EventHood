@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { setSelectedRegion } from "../../redux/actions";
+import logo from "../../assets/images/logo.png";
 
 class Home extends Component {
   state = {
@@ -25,6 +26,7 @@ class Home extends Component {
     const { regions, setRegion } = this.props;
     return (
       <div className="container">
+        {!this.props.actualRegion && <img src={logo} alt="logo" width="100%" />}
         <div id="formSearch">
           <Form onSubmit={e => this.handleSubmit(e)}>
             <Row className="justify-content-md-center">
@@ -55,7 +57,8 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => ({
-  regions: state.regions
+  regions: state.regions,
+  actualRegion: state.actualRegion
 });
 
 const mapDispatchToProps = dispatch => ({
