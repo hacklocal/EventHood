@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Events from "../screens/Events";
 import axios from "axios";
 import jsonpAdapter from "axios-jsonp";
+import SingleEvent from "../interface/list/SingleEvent";
 
 class Main extends Component {
   fetchAreas = () => {
@@ -40,6 +41,10 @@ class Main extends Component {
         {this.props.actualRegion && <NavbarMenu />}
         <Route path="/" exact component={Home} />
         <Route path="/eventi/" component={Events} />
+        <Route
+          path="/evento/:id"
+          render={props => <SingleEvent {...props} />}
+        />
       </Router>
     );
   }

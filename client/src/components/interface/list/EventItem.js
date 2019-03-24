@@ -14,7 +14,7 @@ export default class EventItem extends Component {
               {event.creatore}
             </Card.Subtitle>
             <Card.Text>{event.descrizione}</Card.Text>
-            <Link to="/event/:id">Dettagli evento</Link>
+            <Link to={`/evento/${event.id}`}>Dettagli evento</Link>
           </Card.Body>
         </Card>
       </Col>
