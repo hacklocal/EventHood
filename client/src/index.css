@@ -79,3 +79,14 @@ body {
   color: #333333;
   margin-bottom: 20px;
 }
+
+#eventDetails {
+  margin: 40px auto 0px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+}
+
+#btnJoin {
+  background-color: #23545B !important;
+  color: #FFFFFF !important;
+}
