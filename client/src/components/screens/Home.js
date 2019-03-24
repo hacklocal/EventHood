@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "../../assets/images/logo.png";
 import { Form, Col, Row, Button } from "react-bootstrap";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,16 +9,14 @@ class Home extends Component {
     const { regions } = this.props;
     return (
       <div className="container">
-        <div id="logo">
-          <img src={logo} alt="logo" width={400} height={100} align="middle" />
-        </div>
-
         <div id="formSearch">
           <Form>
             <Row className="justify-content-md-center">
               <Col sm={12} md={6} lg={6}>
                 <Form.Group controlId="formGridState">
-                  <Form.Label>Seleziona un quartiere</Form.Label>
+                  <Form.Label className="text-white">
+                    Seleziona un quartiere
+                  </Form.Label>
                   <Form.Control as="select">
                     {regions.map(el => (
                       <option key={el}>{el}</option>
