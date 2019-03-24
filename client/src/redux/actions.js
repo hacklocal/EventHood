@@ -13,3 +13,8 @@ export const loadEvents = events => ({
   type: "LOAD_EVENTS",
   events
 });
+
+export const loadRegions = query => ({
+  type: "SET_REGIONS",
+  query
+});
