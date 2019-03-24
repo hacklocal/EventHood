@@ -30,7 +30,9 @@ class Home extends Component {
             <Row className="justify-content-md-center">
               <Col sm={12} md={6} lg={6}>
                 <Form.Group controlId="formGridState">
-                  <Form.Label>Seleziona un quartiere</Form.Label>
+                  <Form.Label className="text-white">
+                    Seleziona un quartiere
+                  </Form.Label>
                   <Form.Control
                     as="select"
                     onChange={this.handleChange}
