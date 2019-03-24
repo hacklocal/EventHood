@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import logo from "../../assets/images/logo22.png";
 import { Form, Col, Row } from "react-bootstrap";
+import { connect } from "react-redux";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-export default class Home extends Component {
+class Home extends Component {
   render() {
+    const { regions } = this.props;
     return (
       <div className="container">
         <div id="logo">
@@ -19,8 +21,9 @@ export default class Home extends Component {
                 <Form.Group controlId="formGridState">
                   <Form.Label>Seleziona un quartiere</Form.Label>
                   <Form.Control as="select">
-                    <option>Choose...</option>
-                    <option>...</option>
+                    {regions.map(el => (
+                      <option>{el}</option>
+                    ))}
                   </Form.Control>
                 </Form.Group>
                 {/*<Form.Group controlId="inputSearch">
@@ -38,3 +41,9 @@ export default class Home extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  regions: state.regions
+});
+
+export default connect(mapStateToProps)(Home);
