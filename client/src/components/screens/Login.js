@@ -21,18 +21,10 @@ class Login extends Component {
   verifyUser = e => {
     e.preventDefault();
     fetch(
-      `http://eventhood.worldtecno.com/?db=logIn&email=${
+      `http://eventhood.worldtecno.com/api.php?db=logIn&email=${
         this.state.email
       }&password=${this.state.password}`
     ).then(res => console.log(res));
-    /* const { users } = this.props;
-    const bet =
-      users.find(user => user.nickname === this.state.nickname) &&
-      users.find(user => user.pwd === this.state.pwd) &&
-      users.find(user => user.email === this.state.email);
-    console.log("BET", bet);
-    if (bet !== undefined) {
-    } */
   };
 
   render() {
