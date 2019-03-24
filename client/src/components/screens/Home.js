@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Col, Row, Button } from "react-bootstrap";
+import { Form, Col, Row, Button, Jumbotron } from "react-bootstrap";
 import { connect } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -26,7 +26,16 @@ class Home extends Component {
     const { regions, setRegion } = this.props;
     return (
       <div className="container">
-        {!this.props.actualRegion && <img src={logo} alt="logo" width="100%" />}
+        {!this.props.actualRegion && (
+          <React.Fragment>
+            <Jumbotron fluid id="banner">
+              <h1>
+                Benvenuto su <img src={logo} alt="logo" id="logo" />
+              </h1>
+              <p className="h3">Il quartiere nelle tue mani!</p>
+            </Jumbotron>
+          </React.Fragment>
+        )}
         <div id="formSearch">
           <Form onSubmit={e => this.handleSubmit(e)}>
             <Row className="justify-content-md-center">

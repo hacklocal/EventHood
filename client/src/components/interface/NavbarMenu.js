@@ -18,12 +18,6 @@ export default class NavbarMenu extends Component {
                 Home
               </Link>
             </Nav>
-            <div className="mx-2" />
-            <Nav>
-              <Link className="text-white pages" to="/eventi/">
-                About
-              </Link>
-            </Nav>
           </Nav>
 
           <Nav className="ml-auto">
