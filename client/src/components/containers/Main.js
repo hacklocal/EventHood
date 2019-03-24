@@ -33,10 +33,11 @@ class Main extends Component {
     this.fetchAreas();
     this.fetchEvents();
   }
+
   render() {
     return (
       <Router>
-        <NavbarMenu />
+        {this.props.actualRegion && <NavbarMenu />}
         <Route path="/" exact component={Home} />
         <Route path="/eventi/" component={Events} />
       </Router>
@@ -46,7 +47,8 @@ class Main extends Component {
 
 const mapStateToProps = state => ({
   events: state.events,
-  user: state.user
+  user: state.user,
+  actualRegion: state.actualRegion
 });
 
 const dispatchStateToProps = dispatch => ({
