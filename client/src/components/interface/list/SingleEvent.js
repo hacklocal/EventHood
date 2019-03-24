@@ -26,7 +26,9 @@ class SingleEvent extends Component {
           </p>
 
           <Button id="btnJoin" variant="light">
-            <Link to="#">Partecipa</Link>
+            <Link to={this.props.user && this.props.user.id ? "#" : "/login"}>
+              Partecipa
+            </Link>
           </Button>
         </Container>
       </Jumbotron>
@@ -35,7 +37,8 @@ class SingleEvent extends Component {
 }
 
 const mapStateToProps = state => ({
-  events: state.events
+  events: state.events,
+  user: state.user
 });
 
 export default connect(mapStateToProps)(SingleEvent);
